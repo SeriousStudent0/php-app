@@ -1,0 +1,21 @@
+version: '3'
+services:
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:5672"  # Map host port 8080 to container port 5672
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ./php-app:/Container  # Mount PHP application code
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "15672:15672"  # RabbitMQ management UI
+      - "5672:5672"    # RabbitMQ default port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
