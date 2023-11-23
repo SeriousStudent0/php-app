@@ -32,7 +32,7 @@ notes persos:
     un composer install est obligatoire
 
 A FAIRE POUR FAIRE FONCTIONNER L'APP:
-cd dans le directory DockerTDdirectory
+cd dans le directory php-app
 (lancement de l'image et dockerfile->):
 |docker compose up (ou ps pour le mettre en arrière plan)
 ouvrir un nouveau terminal et cd dans le meme directory
